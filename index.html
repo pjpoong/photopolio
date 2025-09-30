@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 | 화장품 OEM/ODM 주문제작 전문가</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Inter Font 설정 및 기본 스타일 -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth; /* 부드러운 스크롤링 활성화 */
+        }
+        .hero-background {
+            /* 이 URL을 원하는 이미지의 직접 링크로 변경하시면 됩니다. */
+            background-image: url('https://placehold.co/1920x1080/1f2937/d1d5db?text=Modern+Cosmetics+Lab'); 
+            background-size: cover;
+            background-position: center;
+        }
+        /* 커스텀 버튼 스타일링 */
+        .primary-button {
+            transition: all 0.3s ease;
+        }
+        .primary-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        /* Tailwind 커스텀 색상 설정 */
+        :root {
+            --color-primary: #34d399; /* Emerald 400 */
+            --color-secondary: #f472b6; /* Pink 400 */
+        }
+        .text-primary { color: var(--color-primary); }
+        .bg-primary { background-color: var(--color-primary); }
+        .hover-bg-primary:hover { background-color: var(--color-primary); }
+
+        /* 아이콘 SVG 스타일 (lucide-react 스타일 모방) */
+        .icon {
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            fill: none;
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-white">
+
+    <!-- 네비게이션 바 (상단 고정) -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 shadow-lg backdrop-blur-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- 로고/이름 -->
+            <a href="#home" class="text-2xl font-extrabold text-gray-900 transition duration-300 hover:text-primary">
+                J.W. Portfolio
+            </a>
+            
+            <!-- 네비게이션 메뉴 (오른쪽) -->
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-primary transition duration-300 font-medium">홈</a>
+                <a href="#professional" class="text-gray-600 hover:text-primary transition duration-300 font-medium">전문 분야</a>
+                <a href="#passions" class="text-gray-600 hover:text-primary transition duration-300 font-medium">취미 생활</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition duration-300 font-medium">연락처</a>
+            </div>
+
+            <!-- 모바일 햄버거 버튼 -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-primary transition duration-300 p-2 rounded-md">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+        
+        <!-- 모바일 메뉴 드롭다운 -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-4 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">홈</a>
+                <a href="#professional" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">전문 분야</a>
+                <a href="#passions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">취미 생활</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:bg-gray-100">연락처</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. 인트로/히어로 섹션 -->
+        <section id="home" class="hero-background h-screen flex items-center justify-center text-white text-center pt-16">
+            <!-- 배경 오버레이를 70%로 높이고, 제목에서 leading-tight 제거 -->
+            <div class="bg-black bg-opacity-70 p-8 sm:p-12 rounded-xl max-w-4xl mx-4">
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-4">
+                    아름다움을 만드는 여정, <span class="text-primary">끊임없이 달립니다.</span>
+                </h1>
+                <p class="text-xl sm:text-2xl font-light mb-8">
+                    화장품 OEM/ODM 생산 컨설팅
+                </p>
+                <a href="#professional" class="primary-button inline-block bg-primary text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-300 transition duration-300">
+                    전문성 탐색하기
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. 전문 분야 (Professional) 섹션 -->
+        <section id="professional" class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-base font-semibold text-primary uppercase tracking-wider">Professional Expertise</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900">
+                        화장품 OEM/ODM 주문제작 전문가
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        기획부터 시장 출시까지, 성공적인 뷰티 제품을 위한 토탈 솔루션을 제공합니다.
+                    </p>
+                </div>
+
+                <!-- 기존 3개 그리드 (핵심 역량) -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    <!-- 기획/개발 -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                        <svg class="icon w-8 h-8 text-secondary mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <h3 class="text-xl font-bold mb-3">제품 기획 및 컨셉 개발</h3>
+                        <p class="text-gray-600 text-sm">최신 시장 트렌드 분석을 기반으로 혁신적이고 차별화된 제품 컨셉을 구체화합니다. 경쟁력 있는 포뮬러 설계를 위한 초기 단계 컨설팅을 제공합니다.</p>
+                    </div>
+                    <!-- 생산/품질 관리 -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                        <svg class="icon w-8 h-8 text-secondary mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                        <h3 class="text-xl font-bold mb-3">OEM/ODM 생산 관리</h3>
+                        <p class="text-gray-600 text-sm">신뢰할 수 있는 제조사 매칭, 생산 일정 관리, 엄격한 품질 검수 프로세스를 통해 안정적인 공급망을 구축하고 관리합니다.</p>
+                    </div>
+                    <!-- 인증/규제 대응 -->
+                    <div class="bg-white p-6 rounded-xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:scale-[1.02]">
+                        <svg class="icon w-8 h-8 text-secondary mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14 9 11"></polyline></svg>
+                        <h3 class="text-xl font-bold mb-3">수출 및 규제 인증 지원</h3>
+                        <p class="text-gray-600 text-sm">각국 화장품 규제(C-GMP, ISO, CPNP 등)에 대한 깊은 이해를 바탕으로 필요한 인증 획득과 문서 작업을 완벽하게 지원합니다.</p>
+                    </div>
+                </div>
+
+                <!-- 4. OEM/ODM 프로젝트 진행 프로세스 -->
+                <div class="mt-16 pt-8 border-t border-gray-200">
+                    <h3 class="text-2xl font-bold text-center text-gray-900 mb-10">프로젝트 진행 프로세스 (4단계)</h3>
+                    <div class="relative flex justify-center w-full">
+                        
+                        <!-- Process Line (Responsive - Mobile hidden, Tablet/Desktop visible) -->
+                        <div class="absolute top-6 left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-300 sm:hidden"></div>
+                        <div class="absolute top-6 left-0 right-0 h-1 bg-primary hidden sm:block -z-0 transform -translate-y-1/2 mx-10"></div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-5xl">
+                            
+                            <!-- Step 1: 상담 및 기획 -->
+                            <div class="relative z-10 text-center flex flex-col items-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-primary sm:border-t-0 sm:border-l-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-gray-900 font-extrabold mb-3 shadow-md border-4 border-white">
+                                    1
+                                </div>
+                                <h4 class="font-bold text-lg mb-1">상담 및 기획</h4>
+                                <p class="text-sm text-gray-600">아이디어 공유, 트렌드 분석, 목표 설정 및 컨셉 확정.</p>
+                            </div>
+                            <!-- Step 2: 포뮬러 및 샘플 개발 -->
+                            <div class="relative z-10 text-center flex flex-col items-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-primary sm:border-t-0 sm:border-l-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-gray-900 font-extrabold mb-3 shadow-md border-4 border-white">
+                                    2
+                                </div>
+                                <h4 class="font-bold text-lg mb-1">개발 및 샘플링</h4>
+                                <p class="text-sm text-gray-600">최적의 포뮬러 개발, 부자재 선정 및 샘플 품평 진행.</p>
+                            </div>
+                            <!-- Step 3: 생산 및 품질 관리 -->
+                            <div class="relative z-10 text-center flex flex-col items-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-primary sm:border-t-0 sm:border-l-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-gray-900 font-extrabold mb-3 shadow-md border-4 border-white">
+                                    3
+                                </div>
+                                <h4 class="font-bold text-lg mb-1">생산 및 품질</h4>
+                                <p class="text-sm text-gray-600">위생적이고 효율적인 생산, GMP 기준 품질 검수.</p>
+                            </div>
+                            <!-- Step 4: 출고 및 사후 관리 -->
+                            <div class="relative z-10 text-center flex flex-col items-center p-4 bg-white rounded-xl shadow-lg border-t-4 border-primary sm:border-t-0 sm:border-l-4">
+                                <div class="w-12 h-12 flex items-center justify-center rounded-full bg-primary text-gray-900 font-extrabold mb-3 shadow-md border-4 border-white">
+                                    4
+                                </div>
+                                <h4 class="font-bold text-lg mb-1">출고 및 관리</h4>
+                                <p class="text-sm text-gray-600">최종 출고 및 이후 시장 피드백, 리오더 컨설팅.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 프로세스 섹션 끝 -->
+
+            </div>
+        </section>
+
+        <!-- 3. 취미 생활 (Passions) 섹션 -->
+        <section id="passions" class="py-16 sm:py-24 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-base font-semibold text-secondary uppercase tracking-wider">My Passions</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900">
+                        달리고, 도전하는 삶
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        제품의 완성도를 높이는 집념은, 취미 생활에서의 끊임없는 도전에서 나옵니다.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- 러닝/마라톤 -->
+                    <div class="bg-gray-100 p-6 rounded-xl shadow-md">
+                        <svg class="icon w-10 h-10 text-primary mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M15 16h-1"></path><path d="M6 16v-6a4 4 0 0 1 4-4h2.5L14 7l2 2-2 2h-1.5a2.5 2.5 0 0 0-2.5 2.5V16"></path><path d="M14 16v2"></path><path d="M7 16v.5"></path><path d="M17 16v.5"></path></svg>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">러닝 & 마라톤</h3>
+                        <p class="text-gray-700 text-sm">풀 코스 완주 3회, 매일 아침 10km 러닝을 통해 체력과 정신력을 단련합니다. 장거리 레이스에서 배우는 인내와 계획성은 업무의 효율을 높여줍니다.</p>
+                    </div>
+                    <!-- 도전 정신 -->
+                    <div class="bg-gray-100 p-6 rounded-xl shadow-md">
+                        <svg class="icon w-10 h-10 text-primary mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor"><path d="M22 17H2a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4zm-8-3V2a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v12"></path></svg>
+                        <h3 class="text-xl font-bold mb-3 text-gray-900">지속적인 성장</h3>
+                        <p class="text-gray-700 text-sm">늘 새로운 목표를 설정하고 달성하는 것을 즐깁니다. 이는 곧 뷰티 산업의 변화를 선도하고, 고객사의 성장을 돕는 원동력이 됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 연락처 (Contact) 섹션 -->
+        <section id="contact" class="py-16 sm:py-24 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-xl">
+                <div class="text-center mb-12">
+                    <h2 class="text-base font-semibold text-primary uppercase tracking-wider">Get in Touch</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900">
+                        프로젝트 문의 및 연락처
+                    </p>
+                    <p class="mt-4 text-lg text-gray-600">
+                        귀사의 다음 뷰티 프로젝트에 대해 이야기해 봅시다.
+                    </p>
+                </div>
+
+                <!-- 연락처 폼 -->
+                <form id="contact-form" class="bg-white p-8 rounded-xl shadow-2xl">
+                    <div class="mb-6">
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">성함 / 회사명</label>
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150" placeholder="홍길동 / ABL 코스메틱">
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">이메일</label>
+                        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150" placeholder="contact@example.com">
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">문의 내용</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-150" placeholder="OEM/ODM 프로젝트에 대한 간략한 설명을 작성해 주세요."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="primary-button w-full bg-primary text-gray-900 font-bold py-3 rounded-full shadow-lg hover:bg-emerald-300 transition duration-300 flex items-center justify-center">
+                        문의 메일 보내기
+                    </button>
+                    
+                    <!-- 폼 제출 후 메시지 영역 (JavaScript로 내용 변경) -->
+                    <div id="form-message" class="mt-4 text-center text-sm font-medium text-gray-600 hidden">
+                        <!-- 여기에 성공 또는 오류 메시지가 표시됩니다. -->
+                    </div>
+                </form>
+
+                <!-- 기타 연락 정보 -->
+                <div class="mt-10 text-center text-gray-600">
+                    <p class="font-semibold text-lg text-gray-900">기타 연락 수단</p>
+                    <p class="mt-2">전화: 010-XXXX-XXXX (업무 시간 내)</p>
+                    <p>카카오톡 ID: portfolio_id</p>
+                    <p>인스타그램: @jw_beauty_run</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 푸터 -->
+        <footer class="bg-gray-900 text-white py-8">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+                <p>&copy; 2025 J.W. Portfolio. All rights reserved.</p>
+                <p class="mt-2 text-gray-400">Powered by Passion & Professionalism</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Smooth Scrolling (부드러운 스크롤링)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // 모바일 메뉴 닫기
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile Menu Toggle (모바일 메뉴 토글)
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Contact Form Submission (연락처 폼 제출 처리)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // 실제 제출 방지
+            
+            const formMessage = document.getElementById('form-message');
+            formMessage.classList.remove('hidden');
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // 실제 서버 통신 코드가 없으므로, 시뮬레이션된 성공 메시지를 표시합니다.
+            // 실제 사용 시, 여기에 fetch API를 사용하여 서버로 데이터를 전송하는 로직을 추가해야 합니다.
+
+            console.log("폼 데이터:", { name, email, message });
+
+            formMessage.innerHTML = `
+                <div class="p-3 mt-4 rounded-lg bg-emerald-100 text-emerald-800 border border-emerald-300">
+                    <strong>접수 완료!</strong> ${name}님, 문의해주셔서 감사합니다. 빠른 시일 내에 ${email}로 회신드리겠습니다.
+                </div>
+            `;
+            
+            // 폼 초기화
+            this.reset();
+        });
+    </script>
+</body>
+</html>
